@@ -83,7 +83,7 @@ function DoorPanel({ side, isOpen }) {
           borderLeft: !isLeft ? '2px solid rgba(218,165,32,0.3)' : 'none',
         }}
       />
-      {[ 
+      {[
         { top: '11%', height: '22%' },
         { top: '37%', height: '36%' },
         { bottom: '7%', height: '11%' },
@@ -132,13 +132,15 @@ export default function Hero({ isMuted, toggleMute }) {
       <div className="absolute inset-0 z-0">
         {/* Mobile View Image */}
         <img
-          src="/mobile-image.png"
+          fetchPriority='high'
+          src="/mobile-image-2.webp"
           alt="Vishu Kani Mobile"
           className="block sm:hidden absolute inset-0 w-full h-full object-cover object-top"
         />
         {/* Web/Desktop View Image */}
         <img
-          src="/desktop-image.png"
+          fetchPriority='high'
+          src="/desktop-image-2.webp"
           alt="Vishu Kani Desktop"
           className="hidden sm:block absolute inset-0 w-full h-full object-cover object-top"
         />
@@ -172,19 +174,31 @@ export default function Hero({ isMuted, toggleMute }) {
         ✦ &nbsp; tap to open &nbsp; ✦
       </motion.div>
 
-      <motion.button onClick={(e) => { e.stopPropagation(); toggleMute(); }} className="absolute top-5 right-5 z-50 flex items-center justify-center w-10 h-10 rounded-full border border-yellow-500/30 bg-black/40 text-yellow-400/70 backdrop-blur-sm" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3 }}>
+      <motion.button onClick={(e) => { e.stopPropagation(); toggleMute(); }} className="absolute top-3 right-5 z-50 flex items-center justify-center w-10 h-10 rounded-full border border-yellow-500/30 bg-black/40 text-yellow-400/70 backdrop-blur-sm" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3 }}>
         {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
       </motion.button>
 
       {/* ── Text Content ── */}
       <motion.div
-        className="relative z-20 w-full max-w-7xl px-8 pb-12 sm:pb-24 flex flex-col items-center sm:items-start text-center sm:text-left"
-        initial={{ opacity: 0, y: 40 }}
+        // className="relative z-20 w-full max-w-7xl px-8 pb-12 sm:pb-24 flex flex-col items-center sm:items-start text-center sm:text-left"
+        className="
+    absolute z-20 w-full max-w-7xl px-6 sm:px-8
+
+    /* 📱 MOBILE → TOP */
+    top-10 left-1/2 -translate-x-1/2 text-center items-center
+
+    /* 💻 DESKTOP → BOTTOM */
+    sm:top-auto sm:left-1/2 sm:-translate-x-1/2
+    sm:items-start sm:text-left
+
+    flex flex-col
+  "
+        initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: doorsOpen ? 1 : 0, y: doorsOpen ? 0 : 40 }}
-        transition={{ delay: doorsOpen ? 2 : 0, duration: 1.4, ease: "easeOut" }}
+        transition={{ delay: doorsOpen ? 1 : 0, duration: 1, ease: "easeOut" }}
       >
         <h1
-          className="text-4xl sm:text-7xl leading-tight mb-4"
+          className="text-5xl font-bold sm:text-7xl leading-tight mb-4"
           style={{
             fontFamily: "'Noto Serif Malayalam', serif",
             background: "linear-gradient(90deg, #fff7cc 0%, #fbbf24 30%, #f59e0b 60%, #fff7cc 100%)",

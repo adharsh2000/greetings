@@ -112,7 +112,7 @@ export default function Vishu3DCarousel() {
         <GoldenShower3D />
 
         {/* 3D Carousel Stage */}
-        <div className="relative z-20 w-full max-w-5xl px-6 h-[400px] flex items-center justify-center">
+        {/* <div className="relative z-20 w-full max-w-5xl px-6 h-[400px] flex items-center justify-center">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={index}
@@ -129,30 +129,78 @@ export default function Vishu3DCarousel() {
               className="absolute flex flex-col items-center text-center"
             >
               {/* Floating Header */}
-              <motion.span
+        {/* <motion.span
                 style={{ translateZ: "50px" }} // Move closer to user
-                className="text-amber-500 font-bold tracking-[0.5em] text-xs uppercase mb-6"
+                className="text-amber-500 font-bold text-xs uppercase mb-6"
               >
                 {wish.subtitle}
-              </motion.span>
+              </motion.span> */}
 
-              {/* Depth Title */}
-              <h2
+        {/* Depth Title */}
+        {/* <h2
                 style={{ translateZ: "100px" }}
                 className="text-5xl md:text-8xl font-bold text-[#fef3c7] mb-8 leading-tight text-shadow-gold"
               >
                 {wish.title}
-              </h2>
+              </h2> */}
 
-              {/* 3D Divider */}
-              <div style={{ translateZ: "30px" }} className="flex items-center gap-4 mb-8">
+        {/* 3D Divider */}
+        {/* <div style={{ translateZ: "30px" }} className="flex items-center gap-4 mb-8">
                 <div className="h-[2px] w-24 bg-gradient-to-r from-transparent via-amber-500 to-transparent shadow-[0_0_15px_#fbbf24]" />
-              </div>
+              </div> */}
 
-              {/* Floating Message */}
-              <p
+        {/* Floating Message */}
+        {/* <p
                 style={{ translateZ: "60px" }}
                 className="text-zinc-300 text-xl md:text-3xl max-w-2xl font-light italic leading-relaxed"
+              >
+                “ {wish.message} ”
+              </p>
+            </motion.div>
+          </AnimatePresence> */}
+        {/* </div>  */}
+
+        <div className="relative z-20 w-full max-w-5xl px-4 sm:px-6 min-h-[320px] sm:min-h-[400px] flex items-center justify-center">
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={index}
+              custom={direction}
+              variants={cardVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                duration: 1,
+                ease: [0.23, 1, 0.32, 1]
+              }}
+              style={{ transformStyle: "preserve-3d" }}
+              className="absolute flex flex-col items-center text-center"
+            >
+              {/* Subtitle */}
+              <motion.span
+                style={{ translateZ: "50px" }}
+                className="text-amber-500 font-bold text-xs sm:text-sm uppercase mb-4 sm:mb-6"
+              >
+                {wish.subtitle}
+              </motion.span>
+
+              {/* Title */}
+              <h2
+                style={{ translateZ: "100px" }}
+                className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-[#fef3c7] mb-6 leading-tight text-shadow-gold break-words px-2"
+              >
+                {wish.title}
+              </h2>
+
+              {/* Divider */}
+              <div style={{ translateZ: "30px" }} className="flex items-center gap-4 mb-6">
+                <div className="h-[2px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-amber-500 to-transparent shadow-[0_0_15px_#fbbf24]" />
+              </div>
+
+              {/* Message */}
+              <p
+                style={{ translateZ: "60px" }}
+                className="text-base sm:text-lg md:text-2xl max-w-xl sm:max-w-2xl font-light italic leading-relaxed text-zinc-300 px-2"
               >
                 “ {wish.message} ”
               </p>
@@ -167,8 +215,8 @@ export default function Vishu3DCarousel() {
               key={i}
               onClick={() => setIndex([i, i > index ? 1 : -1])}
               className={`h-2 rounded-full transition-all duration-500 transform ${i === index
-                  ? "w-16 bg-amber-400 shadow-[0_0_20px_#fbbf24] scale-110"
-                  : "w-4 bg-white/10 hover:bg-white/30"
+                ? "w-16 bg-amber-400 shadow-[0_0_20px_#fbbf24] scale-90 w-16"
+                : "w-4 bg-white/10 hover:bg-white/30"
                 }`}
             />
           ))}
