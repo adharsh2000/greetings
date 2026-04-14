@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Volume2, VolumeX } from 'lucide-react';
 import { useAudio } from '../hooks/useAudio';
-import MUSIC_SRC from '/krishna-mp3.mp4';
+import MUSIC_SRC from '/Kanikanum-Neram.mp3';
 
 // ─── Kanikkonna petals ────────────────────────────────────────────────────────
 const PETALS = Array.from({ length: 32 }, (_, i) => ({
