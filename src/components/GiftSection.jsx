@@ -260,7 +260,7 @@ export default function VishuKaineettam() {
           </motion.button>
 
           {/* ── FOOTER ── */}
-          <div className="mt-6 flex items-center justify-center gap-2 text-amber-500 text-[12px] sm:text-[9px] uppercase">
+          <div className="mt-6 flex items-center justify-center gap-2 text-amber-500 text-[9px] sm:text-[9px] uppercase">
             <span>Digital Kaineettam 2026</span>
             <div className="w-1 h-1 bg-yellow-900 rounded-full" />
             <span>Trusted UPI Transfer</span>
