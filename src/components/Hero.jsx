@@ -170,7 +170,7 @@ export default function Hero({ isMuted, toggleMute }) {
       </div>
 
       {/* ── UI Elements ── */}
-      <motion.div className="absolute z-50 bottom-8 left-1/2 -translate-x-1/2 text-yellow-400/60 text-xs tracking-widest pointer-events-none" initial={{ opacity: 0 }} animate={{ opacity: doorsOpen ? 0 : 1 }} transition={{ delay: 1.2, duration: 0.8 }}>
+      <motion.div className="absolute z-50 bottom-25 left-1/2 -translate-x-1/2 text-yellow-400/60 text-xs tracking-widest pointer-events-none" initial={{ opacity: 0 }} animate={{ opacity: doorsOpen ? 0 : 1 }} transition={{ delay: 1.2, duration: 0.8 }}>
         ✦ &nbsp; tap to open &nbsp; ✦
       </motion.div>
 
