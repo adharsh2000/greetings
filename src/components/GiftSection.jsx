@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, X } from "lucide-react";
@@ -22,7 +21,7 @@ export default function VishuKaineettam() {
   const isIOS = () => {
     return (
       /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
     );
   };
   const isMobile = () => isAndroid() || isIOS();
@@ -106,160 +105,168 @@ export default function VishuKaineettam() {
   return (
     <>
       {/* QRCode.js library */}
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" async />
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        async
+      />
 
       <section className="relative min-h-screen bg-[#120802] flex items-center justify-center overflow-hidden px-4 py-12 sm:py-20 font-serif">
-  
-  {/* ── Background ── */}
-  <div className="absolute inset-0 opacity-20 pointer-events-none">
-    <div
-      className="absolute inset-0"
-      style={{
-        backgroundImage: "radial-gradient(#3d2610 1px, transparent 1px)",
-        backgroundSize: "30px 30px",
-      }}
-    />
-  </div>
+        {/* ── Background ── */}
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: "radial-gradient(#3d2610 1px, transparent 1px)",
+              backgroundSize: "30px 30px",
+            }}
+          />
+        </div>
 
-  {/* ── MAIN CONTAINER ── */}
-  <div className="relative z-10 w-full max-w-sm sm:max-w-md mx-auto flex flex-col items-center text-center">
+        {/* ── MAIN CONTAINER ── */}
+        <div className="relative z-10 w-full max-w-sm sm:max-w-md mx-auto flex flex-col items-center text-center">
+          {/* ── HEADER ── */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-6 sm:mb-10"
+          >
+            <span className="text-amber-500 font-bold text-xs sm:text-sm uppercase block mb-3 sm:mb-4">
+              ഐശ്വര്യം • സമൃദ്ധി
+            </span>
 
-    {/* ── HEADER ── */}
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="mb-6 sm:mb-10"
-    >
-      <span className="text-amber-500 font-bold text-xs sm:text-sm uppercase block mb-3 sm:mb-4">
-        ഐശ്വര്യം • സമൃദ്ധി
-      </span>
+            <h2
+              style={{ translateZ: "100px" }}
+              className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-[#fef3c7] mb-6 leading-tight text-shadow-gold break-words px-2"
+            >
+              വിഷുക്കൈനീട്ടം
+            </h2>
 
-      <h2
-        style={{ translateZ: "100px" }}
-        className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-[#fef3c7] mb-6 leading-tight text-shadow-gold break-words px-2"
-      >
-        വിഷുക്കൈനീട്ടം
-      </h2>
-
-      {/* <div className="h-[1px] w-14 sm:w-20 bg-gradient-to-r from-transparent via-yellow-600 to-transparent mx-auto mt-3 sm:mt-4" /> */}
-      {/* Divider */}
-              <div style={{ translateZ: "30px" }} className="w-full flex items-center justify-center gap-4 mb-6">
-                <div className="h-[2px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-amber-500 to-transparent shadow-[0_0_15px_#fbbf24]" />
-              </div>
-    </motion.div>
-
-    {/* ── COIN ── */}
-    <div className="relative w-full h-52 sm:h-64 flex items-center justify-center mb-6 sm:mb-10">
-      
-      <div className="absolute w-36 sm:w-52 h-36 sm:h-52 bg-yellow-600/10 rounded-full blur-3xl animate-pulse" />
-
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={amount}
-          initial={{ rotateY: -90, opacity: 0, scale: 0.85 }}
-          animate={{ rotateY: 0, opacity: 1, scale: 1 }}
-          exit={{ rotateY: 90, opacity: 0, scale: 0.85 }}
-          transition={{ type: "spring", stiffness: 100 }}
-          className="relative w-24 sm:w-36 h-24 sm:h-36 flex items-center justify-center"
-        >
-          <div className="absolute inset-0 rounded-full bg-gradient-to-b from-[#ffd700] via-[#b8860b] to-[#8b4513] shadow-[0_10px_40px_rgba(0,0,0,0.6),inset_0_2px_10px_rgba(255,255,255,0.5)] border-[3px] border-[#ffd700]/30" />
-
-          <div className="relative text-center">
-            <p className="text-[#3d2610] text-[9px] sm:text-[11px] font-bold opacity-60 mb-1">
-              കൈനീട്ടം
-            </p>
-
-            <div className="flex items-start justify-center text-[#3d2610]">
-              <span className="text-xs sm:text-lg font-bold mr-1">₹</span>
-              <span className="text-2xl sm:text-4xl font-black">
-                {amount}
-              </span>
+            {/* <div className="h-[1px] w-14 sm:w-20 bg-gradient-to-r from-transparent via-yellow-600 to-transparent mx-auto mt-3 sm:mt-4" /> */}
+            {/* Divider */}
+            <div
+              style={{ translateZ: "30px" }}
+              className="w-full flex items-center justify-center gap-4 mb-6"
+            >
+              <div className="h-[2px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-amber-500 to-transparent shadow-[0_0_15px_#fbbf24]" />
             </div>
+          </motion.div>
 
-            <p className="text-[#3d2610] text-[9px] sm:text-[11px] font-bold opacity-60 mt-1">
-              നൽകുക
-            </p>
+          {/* ── COIN ── */}
+          <div className="relative w-full h-52 sm:h-64 flex items-center justify-center mb-6 sm:mb-10">
+            <div className="absolute w-36 sm:w-52 h-36 sm:h-52 bg-yellow-600/10 rounded-full blur-3xl animate-pulse" />
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={amount}
+                initial={{ rotateY: -90, opacity: 0, scale: 0.85 }}
+                animate={{ rotateY: 0, opacity: 1, scale: 1 }}
+                exit={{ rotateY: 90, opacity: 0, scale: 0.85 }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                className="relative w-24 sm:w-36 h-24 sm:h-36 flex items-center justify-center"
+              >
+                <div className="absolute inset-0 rounded-full bg-gradient-to-b from-[#ffd700] via-[#b8860b] to-[#8b4513] shadow-[0_10px_40px_rgba(0,0,0,0.6),inset_0_2px_10px_rgba(255,255,255,0.5)] border-[3px] border-[#ffd700]/30" />
+
+                <div className="relative text-center">
+                  <p className="text-[#3d2610] text-[9px] sm:text-[11px] font-bold opacity-60 mb-1">
+                    കൈനീട്ടം
+                  </p>
+
+                  <div className="flex items-start justify-center text-[#3d2610]">
+                    <span className="text-xs sm:text-lg font-bold mr-1">₹</span>
+                    <span className="text-2xl sm:text-4xl font-black">
+                      {amount}
+                    </span>
+                  </div>
+
+                  <p className="text-[#3d2610] text-[9px] sm:text-[11px] font-bold opacity-60 mt-1">
+                    നൽകുക
+                  </p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* particles */}
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-2 h-2 sm:w-3 sm:h-3 bg-[#ffd700] rounded-full opacity-40"
+                animate={{
+                  y: [0, 180],
+                  x: [0, i % 2 === 0 ? 30 : -30],
+                  rotate: [0, 360],
+                  opacity: [0, 0.6, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  delay: i * 0.4,
+                  ease: "linear",
+                }}
+                style={{ top: "20%", left: `${20 + i * 8}%` }}
+              />
+            ))}
           </div>
-        </motion.div>
-      </AnimatePresence>
 
-      {/* particles */}
-      {[...Array(8)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-2 h-2 sm:w-3 sm:h-3 bg-[#ffd700] rounded-full opacity-40"
-          animate={{
-            y: [0, 180],
-            x: [0, i % 2 === 0 ? 30 : -30],
-            rotate: [0, 360],
-            opacity: [0, 0.6, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            delay: i * 0.4,
-            ease: "linear",
-          }}
-          style={{ top: "20%", left: `${20 + i * 8}%` }}
-        />
-      ))}
-    </div>
+          {/* ── LABEL ── */}
+          <p
+            style={{ marginBottom: "5px" }}
+            className="text-yellow-600/40 text-[9px] sm:text-[10px] uppercase tracking-widest mb-8"
+          >
+            ഒരു തുക തിരഞ്ഞെടുക്കുക
+          </p>
 
-    {/* ── LABEL ── */}
-    <p style={{ marginBottom: '5px'}} className="text-yellow-600/40 text-[9px] sm:text-[10px] uppercase tracking-widest mb-8">
-      ഒരു തുക തിരഞ്ഞെടുക്കുക
-    </p>
+          {/* ── AMOUNT GRID ── */}
+          <div
+            style={{ marginBottom: "5px" }}
+            className="w-full grid grid-cols-3 gap-3 sm:gap-4 mb-8"
+          >
+            {AMOUNTS.map((amt) => (
+              <motion.button
+                key={amt}
+                whileTap={{ scale: 0.92 }}
+                onClick={() => setAmount(amt)}
+                className={`h-12 sm:h-14 rounded-lg flex items-center justify-center font-bold text-sm sm:text-lg border transition-all ${
+                  amount === amt
+                    ? "bg-[#2a1a0a] border-yellow-500/60 text-[#f3cf7a]"
+                    : "bg-black/20 border-white/5 text-yellow-600/50"
+                }`}
+              >
+                ₹{amt}
+              </motion.button>
+            ))}
+          </div>
 
-    {/* ── AMOUNT GRID ── */}
-    <div style={{ marginBottom: '5px'}} className="w-full grid grid-cols-3 gap-3 sm:gap-4 mb-8">
-      {AMOUNTS.map((amt) => (
-        <motion.button
-          key={amt}
-          whileTap={{ scale: 0.92 }}
-          onClick={() => setAmount(amt)}
-          className={`h-12 sm:h-14 rounded-lg flex items-center justify-center font-bold text-sm sm:text-lg border transition-all ${
-            amount === amt
-              ? "bg-[#2a1a0a] border-yellow-500/60 text-[#f3cf7a]"
-              : "bg-black/20 border-white/5 text-yellow-600/50"
-          }`}
-        >
-          ₹{amt}
-        </motion.button>
-      ))}
-    </div>
+          {/* ── PAY BUTTON ── */}
+          <motion.button
+            whileTap={{ scale: 0.96 }}
+            onClick={handleKaineettam}
+            className="w-full py-4 sm:py-5 rounded-xl bg-gradient-to-b from-[#e5bc5e] to-[#b38b34] shadow-[0_10px_30px_rgba(0,0,0,0.4)] flex items-center justify-center gap-3 overflow-hidden relative"
+          >
+            <motion.div
+              animate={{ x: [-100, 300] }}
+              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+              className="absolute top-0 h-full w-16 bg-white/20 skew-x-12"
+            />
 
-    {/* ── PAY BUTTON ── */}
-    <motion.button
-      whileTap={{ scale: 0.96 }}
-      onClick={handleKaineettam}
-      className="w-full py-4 sm:py-5 rounded-xl bg-gradient-to-b from-[#e5bc5e] to-[#b38b34] shadow-[0_10px_30px_rgba(0,0,0,0.4)] flex items-center justify-center gap-3 overflow-hidden relative"
-    >
-      <motion.div
-        animate={{ x: [-100, 300] }}
-        transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-        className="absolute top-0 h-full w-16 bg-white/20 skew-x-12"
-      />
+            <img
+              src="https://img.icons8.com/color/48/google-pay.png"
+              alt="gpay"
+              className="w-6 h-6 sm:w-7 sm:h-7"
+            />
 
-      <img
-        src="https://img.icons8.com/color/48/google-pay.png"
-        alt="gpay"
-        className="w-6 h-6 sm:w-7 sm:h-7"
-      />
+            <span className="text-[#2a1805] font-black uppercase text-xs sm:text-sm tracking-wide">
+              സമർപ്പിക്കുക
+            </span>
+          </motion.button>
 
-      <span className="text-[#2a1805] font-black uppercase text-xs sm:text-sm tracking-wide">
-        സമർപ്പിക്കുക
-      </span>
-    </motion.button>
-
-    {/* ── FOOTER ── */}
-    <div className="mt-6 flex items-center justify-center gap-2 text-yellow-800/40 text-[8px] sm:text-[9px] uppercase">
-      <span>Digital Kaineettam 2026</span>
-      <div className="w-1 h-1 bg-yellow-900 rounded-full" />
-      <span>Trusted UPI Transfer</span>
-    </div>
-
-  </div>
-</section>
+          {/* ── FOOTER ── */}
+          <div className="mt-6 flex items-center justify-center gap-2 text-yellow-800/40 text-[8px] sm:text-[9px] uppercase">
+            <span>Digital Kaineettam 2026</span>
+            <div className="w-1 h-1 bg-yellow-900 rounded-full" />
+            <span>Trusted UPI Transfer</span>
+          </div>
+        </div>
+      </section>
 
       {/* QR CODE MODAL (Web only) */}
       <AnimatePresence>
@@ -275,7 +282,7 @@ export default function VishuKaineettam() {
               initial={{ scale: 0.85, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.85, opacity: 0, y: 20 }}
-              transition={{ type: "spring", stiffness: 500, damping: 50 }}
+              transition={{ type: "spring", stiffness: 500, damping: 15 }}
               onClick={(e) => e.stopPropagation()}
               className="relative bg-[#fffbf0] rounded-2xl p-8 flex flex-col items-center shadow-2xl max-w-xs w-full"
             >
@@ -359,7 +366,6 @@ export default function VishuKaineettam() {
 // export default function VishuKaineettam() {
 //   const [amount, setAmount] = useState(101);
 
-
 //   const handleKaineettam = () => {
 //     const upiId = "9061117489@upi";
 //     const upiUrl = `upi://pay?pa=${upiId}&pn=Vishu%20Kaineettam&am=${amount}&cu=INR&tn=Vishu%20Kaineettam%20Blessings`;
@@ -371,10 +377,10 @@ export default function VishuKaineettam() {
 //       link.href = upiUrl;
 //       link.style.display = "none";
 //       document.body.appendChild(link);
-      
+
 //       // Trigger the click
 //       link.click();
-      
+
 //       // Cleanup
 //       document.body.removeChild(link);
 //     } else {
@@ -455,7 +461,7 @@ export default function VishuKaineettam() {
 //                   </span>
 //                 </div>
 //                 <p className="text-[#3d2610] text-[12px] font-bold opacity-60 leading-none mb-1">
-//                   നൽകുക 
+//                   നൽകുക
 //                 </p>
 //               </div>
 //             </motion.div>
