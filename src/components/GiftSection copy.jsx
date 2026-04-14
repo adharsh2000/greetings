@@ -18,13 +18,7 @@ export default function VishuKaineettam() {
 
   // Detect platform
   const isAndroid = () => /Android/i.test(navigator.userAgent);
-  // const isIOS = () => /iPhone|iPad|iPod/i.test(navigator.userAgent);
-  const isIOS = () => {
-    return (
-      /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
-    );
-  };
+  const isIOS = () => /iPhone|iPad|iPod/i.test(navigator.userAgent);
   const isMobile = () => isAndroid() || isIOS();
 
   // Generate QR when modal opens or amount changes
@@ -108,158 +102,298 @@ export default function VishuKaineettam() {
       {/* QRCode.js library */}
       <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" async />
 
-      <section className="relative min-h-screen bg-[#120802] flex items-center justify-center overflow-hidden px-4 py-12 sm:py-20 font-serif">
-  
-  {/* ── Background ── */}
-  <div className="absolute inset-0 opacity-20 pointer-events-none">
-    <div
-      className="absolute inset-0"
-      style={{
-        backgroundImage: "radial-gradient(#3d2610 1px, transparent 1px)",
-        backgroundSize: "30px 30px",
-      }}
-    />
-  </div>
+      <section className="relative min-h-screen bg-[#120802] flex flex-col items-center justify-center overflow-hidden py-20 font-serif">
+        {/* KERALA MURAL BACKGROUND ELEMENTS */}
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <div
+            className="absolute top-0 left-0 w-full h-full"
+            style={{
+              backgroundImage: "radial-gradient(#3d2610 1px, transparent 1px)",
+              backgroundSize: "30px 30px",
+            }}
+          />
+        </div>
 
-  {/* ── MAIN CONTAINER ── */}
-  <div className="relative z-10 w-full max-w-sm sm:max-w-md mx-auto flex flex-col items-center text-center">
+        {/* <div className="relative z-10 w-full max-w-md px-8 text-center"> */}
+          {/* RITUAL HEADER */}
+          {/* <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-10"
+          >
+            <span className="text-yellow-600/60 uppercase text-[10px] mb-2 block">
+              ഐശ്വര്യം • സമൃദ്ധി
+            </span>
+            <h2
+              className="text-4xl font-bold text-[#f3cf7a] tracking-tight mb-1"
+              style={{ textShadow: "0 2px 10px rgba(0,0,0,0.5)" }}
+            >
+              വിഷുക്കൈനീട്ടം
+            </h2>
+            <div className="h-[1px] w-24 bg-gradient-to-r from-transparent via-yellow-600 to-transparent mx-auto mt-4" />
+          </motion.div> */}
 
-    {/* ── HEADER ── */}
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="mb-6 sm:mb-10"
-    >
-      <span className="text-amber-500 font-bold text-xs sm:text-sm uppercase block mb-3 sm:mb-4">
-        ഐശ്വര്യം • സമൃദ്ധി
-      </span>
+          {/* GOLDEN COIN DISPLAY */}
+          {/* <div className="relative h-72 flex items-center justify-center mb-10">
+            <div className="absolute w-64 h-64 bg-yellow-600/10 rounded-full blur-3xl animate-pulse" />
 
-      <h2
-        style={{ translateZ: "100px" }}
-        className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-[#fef3c7] mb-6 leading-tight text-shadow-gold break-words px-2"
-      >
-        വിഷുക്കൈനീട്ടം
-      </h2>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={amount}
+                initial={{ rotateY: -90, opacity: 0, scale: 0.8 }}
+                animate={{ rotateY: 0, opacity: 1, scale: 1 }}
+                exit={{ rotateY: 90, opacity: 0, scale: 0.8 }}
+                transition={{ type: "spring", stiffness: 100 }}
+                className="relative w-40 h-40 flex items-center justify-center"
+              >
+                <div className="absolute inset-0 rounded-full bg-gradient-to-b from-[#ffd700] via-[#b8860b] to-[#8b4513] shadow-[0_10px_40px_rgba(0,0,0,0.6),inset_0_2px_10px_rgba(255,255,255,0.5)] border-[3px] border-[#ffd700]/30" />
+                <div className="relative text-center">
+                  <p className="text-[#3d2610] text-[12px] font-bold opacity-60 leading-none mb-1">
+                    കൈനീട്ടം
+                  </p>
+                  <div className="flex items-start justify-center text-[#3d2610]">
+                    <span className="text-xl font-bold mr-1">₹</span>
+                    <span className="text-5xl font-black tracking-tighter">
+                      {amount}
+                    </span>
+                  </div>
+                  <p className="text-[#3d2610] text-[12px] font-bold opacity-60 leading-none mb-1">
+                    നൽകുക
+                  </p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
 
-      {/* <div className="h-[1px] w-14 sm:w-20 bg-gradient-to-r from-transparent via-yellow-600 to-transparent mx-auto mt-3 sm:mt-4" /> */}
-      {/* Divider */}
-              <div style={{ translateZ: "30px" }} className="w-full flex items-center justify-center gap-4 mb-6">
-                <div className="h-[2px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-amber-500 to-transparent shadow-[0_0_15px_#fbbf24]" />
-              </div>
-    </motion.div>
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-3 h-4 bg-[#ffd700] rounded-full opacity-40"
+                animate={{
+                  y: [0, 200],
+                  x: [0, i % 2 === 0 ? 40 : -40],
+                  rotate: [0, 360],
+                  opacity: [0, 0.6, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  delay: i * 0.5,
+                  ease: "linear",
+                }}
+                style={{ top: "20%", left: `${20 + i * 10}%` }}
+              />
+            ))}
+          </div> */}
 
-    {/* ── COIN ── */}
-    <div className="relative w-full h-52 sm:h-64 flex items-center justify-center mb-6 sm:mb-10">
-      
-      <div className="absolute w-36 sm:w-52 h-36 sm:h-52 bg-yellow-600/10 rounded-full blur-3xl animate-pulse" />
+          {/* AMOUNT SELECTION */}
+          {/* <p className="text-yellow-600/40 text-[10px] uppercase tracking-widest mb-6 font-sans">
+            ഒരു തുക തിരഞ്ഞെടുക്കുക
+          </p>
+          <div className="grid grid-cols-3 gap-4 mb-12 px-4">
+            {AMOUNTS.map((amt) => (
+              <motion.button
+                key={amt}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setAmount(amt)}
+                className={`h-14 rounded-lg flex flex-col items-center justify-center transition-all border relative overflow-hidden ${
+                  amount === amt
+                    ? "bg-[#2a1a0a] border-yellow-500/60 shadow-[0_0_20px_rgba(184,134,11,0.2)]"
+                    : "bg-black/20 border-white/5 text-yellow-600/50"
+                }`}
+              >
+                <span
+                  className={`text-lg font-bold ${amount === amt ? "text-[#f3cf7a]" : ""}`}
+                >
+                  ₹{amt}
+                </span>
+                {amount === amt && (
+                  <motion.div
+                    layoutId="tray-indicator"
+                    className="absolute bottom-0 left-0 w-full h-[2px] bg-yellow-500"
+                  />
+                )}
+              </motion.button>
+            ))}
+          </div> */}
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={amount}
-          initial={{ rotateY: -90, opacity: 0, scale: 0.85 }}
-          animate={{ rotateY: 0, opacity: 1, scale: 1 }}
-          exit={{ rotateY: 90, opacity: 0, scale: 0.85 }}
-          transition={{ type: "spring", stiffness: 100 }}
-          className="relative w-24 sm:w-36 h-24 sm:h-36 flex items-center justify-center"
-        >
-          <div className="absolute inset-0 rounded-full bg-gradient-to-b from-[#ffd700] via-[#b8860b] to-[#8b4513] shadow-[0_10px_40px_rgba(0,0,0,0.6),inset_0_2px_10px_rgba(255,255,255,0.5)] border-[3px] border-[#ffd700]/30" />
+          {/* PAY BUTTON */}
+          {/* <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={handleKaineettam}
+            className="w-full relative py-5 px-8 rounded-xl bg-gradient-to-b from-[#e5bc5e] to-[#b38b34] shadow-[0_10px_30px_rgba(0,0,0,0.4)] group flex items-center justify-center gap-4 overflow-hidden"
+          >
+            <motion.div
+              animate={{ x: [-100, 400] }}
+              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+              className="absolute top-0 h-full w-20 bg-white/20 skew-x-12"
+            />
+            <img
+              width="32"
+              height="32"
+              src="https://img.icons8.com/color/48/google-pay.png"
+              alt="google-pay"
+              className="drop-shadow-sm"
+            />
+            <span className="text-[#2a1805] font-black uppercase tracking-widest text-sm">
+              സമർപ്പിക്കുക (Pay via GPay)
+            </span>
+            <Sparkles size={16} className="text-[#2a1805] animate-pulse" />
+          </motion.button>
 
-          <div className="relative text-center">
-            <p className="text-[#3d2610] text-[9px] sm:text-[11px] font-bold opacity-60 mb-1">
-              കൈനീട്ടം
-            </p>
-
-            <div className="flex items-start justify-center text-[#3d2610]">
-              <span className="text-xs sm:text-lg font-bold mr-1">₹</span>
-              <span className="text-2xl sm:text-4xl font-black">
-                {amount}
-              </span>
-            </div>
-
-            <p className="text-[#3d2610] text-[9px] sm:text-[11px] font-bold opacity-60 mt-1">
-              നൽകുക
-            </p>
+          <div className="mt-10 flex items-center justify-center gap-2 text-yellow-800/40 text-[9px] uppercase tracking-tighter font-sans">
+            <span>Digital Kaineettam 2026</span>
+            <div className="w-1 h-1 bg-yellow-900 rounded-full" />
+            <span>Trusted UPI Transfer</span>
           </div>
-        </motion.div>
-      </AnimatePresence>
+        </div> */}
 
-      {/* particles */}
-      {[...Array(8)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-2 h-2 sm:w-3 sm:h-3 bg-[#ffd700] rounded-full opacity-40"
-          animate={{
-            y: [0, 180],
-            x: [0, i % 2 === 0 ? 30 : -30],
-            rotate: [0, 360],
-            opacity: [0, 0.6, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            delay: i * 0.4,
-            ease: "linear",
-          }}
-          style={{ top: "20%", left: `${20 + i * 8}%` }}
-        />
-      ))}
-    </div>
+            <div className="relative z-10 w-full max-w-md px-4 sm:px-8 text-center">
+  {/* ── HEADER ── */}
+  <motion.div
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    className="mb-6 sm:mb-10"
+  >
+    <span className="text-amber-500 font-bold text-xs sm:text-sm uppercase mb-4 sm:mb-6">
+      ഐശ്വര്യം • സമൃദ്ധി
+    </span>
 
-    {/* ── LABEL ── */}
-    <p style={{ marginBottom: '5px'}} className="text-yellow-600/40 text-[9px] sm:text-[10px] uppercase tracking-widest mb-8">
-      ഒരു തുക തിരഞ്ഞെടുക്കുക
-    </p>
-
-    {/* ── AMOUNT GRID ── */}
-    <div style={{ marginBottom: '5px'}} className="w-full grid grid-cols-3 gap-3 sm:gap-4 mb-8">
-      {AMOUNTS.map((amt) => (
-        <motion.button
-          key={amt}
-          whileTap={{ scale: 0.92 }}
-          onClick={() => setAmount(amt)}
-          className={`h-12 sm:h-14 rounded-lg flex items-center justify-center font-bold text-sm sm:text-lg border transition-all ${
-            amount === amt
-              ? "bg-[#2a1a0a] border-yellow-500/60 text-[#f3cf7a]"
-              : "bg-black/20 border-white/5 text-yellow-600/50"
-          }`}
-        >
-          ₹{amt}
-        </motion.button>
-      ))}
-    </div>
-
-    {/* ── PAY BUTTON ── */}
-    <motion.button
-      whileTap={{ scale: 0.96 }}
-      onClick={handleKaineettam}
-      className="w-full py-4 sm:py-5 rounded-xl bg-gradient-to-b from-[#e5bc5e] to-[#b38b34] shadow-[0_10px_30px_rgba(0,0,0,0.4)] flex items-center justify-center gap-3 overflow-hidden relative"
+    <h2
+      className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-[#fef3c7] mb-6 leading-tight text-shadow-gold break-words px-2"
+      style={{ textShadow: "0 2px 10px rgba(0,0,0,0.5)" }}
     >
+      വിഷുക്കൈനീട്ടം
+    </h2>
+
+    <div className="h-[1px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-yellow-600 to-transparent mx-auto mt-3 sm:mt-4" />
+  </motion.div>
+
+  {/* ── COIN DISPLAY ── */}
+  <div className="relative h-56 sm:h-72 flex items-center justify-center mb-6 sm:mb-10">
+    <div className="absolute w-40 sm:w-64 h-40 sm:h-64 bg-yellow-600/10 rounded-full blur-3xl animate-pulse" />
+
+    <AnimatePresence mode="wait">
       <motion.div
-        animate={{ x: [-100, 300] }}
-        transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-        className="absolute top-0 h-full w-16 bg-white/20 skew-x-12"
+        key={amount}
+        initial={{ rotateY: -90, opacity: 0, scale: 0.8 }}
+        animate={{ rotateY: 0, opacity: 1, scale: 1 }}
+        exit={{ rotateY: 90, opacity: 0, scale: 0.8 }}
+        transition={{ type: "spring", stiffness: 100 }}
+        className="relative w-28 sm:w-40 h-28 sm:h-40 flex items-center justify-center"
+      >
+        <div className="absolute inset-0 rounded-full bg-gradient-to-b from-[#ffd700] via-[#b8860b] to-[#8b4513] shadow-[0_10px_40px_rgba(0,0,0,0.6),inset_0_2px_10px_rgba(255,255,255,0.5)] border-[3px] border-[#ffd700]/30" />
+
+        <div className="relative text-center">
+          <p className="text-[#3d2610] text-[10px] sm:text-[12px] font-bold opacity-60 mb-1">
+            കൈനീട്ടം
+          </p>
+
+          <div className="flex items-start justify-center text-[#3d2610]">
+            <span className="text-sm sm:text-xl font-bold mr-1">₹</span>
+            <span className="text-3xl sm:text-5xl font-black tracking-tighter">
+              {amount}
+            </span>
+          </div>
+
+          <p className="text-[#3d2610] text-[10px] sm:text-[12px] font-bold opacity-60 mt-1">
+            നൽകുക
+          </p>
+        </div>
+      </motion.div>
+    </AnimatePresence>
+
+    {/* Falling particles */}
+    {[...Array(8)].map((_, i) => (
+      <motion.div
+        key={i}
+        className="absolute w-2 sm:w-3 h-3 sm:h-4 bg-[#ffd700] rounded-full opacity-40"
+        animate={{
+          y: [0, 200],
+          x: [0, i % 2 === 0 ? 40 : -40],
+          rotate: [0, 360],
+          opacity: [0, 0.6, 0],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          delay: i * 0.5,
+          ease: "linear",
+        }}
+        style={{ top: "20%", left: `${20 + i * 10}%` }}
       />
-
-      <img
-        src="https://img.icons8.com/color/48/google-pay.png"
-        alt="gpay"
-        className="w-6 h-6 sm:w-7 sm:h-7"
-      />
-
-      <span className="text-[#2a1805] font-black uppercase text-xs sm:text-sm tracking-wide">
-        സമർപ്പിക്കുക
-      </span>
-    </motion.button>
-
-    {/* ── FOOTER ── */}
-    <div className="mt-6 flex items-center justify-center gap-2 text-yellow-800/40 text-[8px] sm:text-[9px] uppercase">
-      <span>Digital Kaineettam 2026</span>
-      <div className="w-1 h-1 bg-yellow-900 rounded-full" />
-      <span>Trusted UPI Transfer</span>
-    </div>
-
+    ))}
   </div>
-</section>
+
+  {/* ── AMOUNT SELECTION ── */}
+  <p style={{ marginBottom: '5px'}} className="text-yellow-600/40 text-[9px] sm:text-[10px] uppercase tracking-widest mb-4 sm:mb-6">
+    ഒരു തുക തിരഞ്ഞെടുക്കുക
+  </p>
+
+  <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-8 sm:mb-12 px-2 sm:px-4">
+    {AMOUNTS.map((amt) => (
+      <motion.button
+        key={amt}
+        whileTap={{ scale: 0.9 }}
+        onClick={() => setAmount(amt)}
+        className={`h-12 sm:h-14 rounded-lg flex flex-col items-center justify-center transition-all border ${
+          amount === amt
+            ? "bg-[#2a1a0a] border-yellow-500/60 shadow-[0_0_20px_rgba(184,134,11,0.2)]"
+            : "bg-black/20 border-white/5 text-yellow-600/50"
+        }`}
+      >
+        <span className="text-sm sm:text-lg font-bold">
+          ₹{amt}
+        </span>
+
+        {/* {amount === amt && (
+          <motion.div
+            layoutId="tray-indicator"
+            className="absolute bottom-0 left-0 w-full h-[2px] bg-yellow-500"
+          />
+        )} */}
+      </motion.button>
+    ))}
+  </div>
+
+  {/* ── PAY BUTTON ── */}
+  <motion.button
+    whileHover={{ scale: 1.02 }}
+    whileTap={{ scale: 0.96 }}
+    onClick={handleKaineettam}
+    style={{
+      marginTop: '5px'
+    }}
+    className="w-full relative py-4 sm:py-5 px-6 sm:px-8 rounded-xl bg-gradient-to-b from-[#e5bc5e] to-[#b38b34] shadow-[0_10px_30px_rgba(0,0,0,0.4)] flex items-center justify-center gap-3 sm:gap-4 overflow-hidden"
+  >
+    <motion.div
+      animate={{ x: [-100, 400] }}
+      transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+      className="absolute top-0 h-full w-20 bg-white/20 skew-x-12"
+    />
+
+    <img
+      width="28"
+      height="28"
+      src="https://img.icons8.com/color/48/google-pay.png"
+      alt="google-pay"
+      className="drop-shadow-sm"
+    />
+
+    <span className="text-[#2a1805] font-black uppercase tracking-wide text-xs sm:text-sm">
+      സമർപ്പിക്കുക
+    </span>
+  </motion.button>
+
+  {/* ── FOOTER ── */}
+  <div className="mt-6 sm:mt-10 flex items-center justify-center gap-2 text-yellow-800/40 text-[8px] sm:text-[9px] uppercase tracking-tight">
+    <span>Digital Kaineettam 2026</span>
+    <div className="w-1 h-1 bg-yellow-900 rounded-full" />
+    <span>Trusted UPI Transfer</span>
+  </div>
+</div>
+
+      </section>
 
       {/* QR CODE MODAL (Web only) */}
       <AnimatePresence>
