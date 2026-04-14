@@ -254,7 +254,7 @@ export default function VishuKaineettam() {
               className="w-6 h-6 sm:w-7 sm:h-7"
             />
 
-            <span className="text-[#2a1805] font-black uppercase text-xs sm:text-sm tracking-wide">
+            <span className="text-[#2a1805] font-black uppercase text-sm sm:text-sm tracking-wide">
               സമർപ്പിക്കുക
             </span>
           </motion.button>
