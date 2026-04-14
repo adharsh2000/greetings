@@ -143,7 +143,7 @@ export default function VishuKaineettam() {
                 initial={{ rotateY: -90, opacity: 0, scale: 0.8 }}
                 animate={{ rotateY: 0, opacity: 1, scale: 1 }}
                 exit={{ rotateY: 90, opacity: 0, scale: 0.8 }}
-                transition={{ type: "spring", stiffness: 100 }}
+                transition={{  type: "spring", stiffness: 500, damping: 40}}
                 className="relative w-40 h-40 flex items-center justify-center"
               >
                 <div className="absolute inset-0 rounded-full bg-gradient-to-b from-[#ffd700] via-[#b8860b] to-[#8b4513] shadow-[0_10px_40px_rgba(0,0,0,0.6),inset_0_2px_10px_rgba(255,255,255,0.5)] border-[3px] border-[#ffd700]/30" />
