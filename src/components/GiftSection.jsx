@@ -210,7 +210,7 @@ export default function VishuKaineettam() {
           {/* ── LABEL ── */}
           <p
             style={{ marginBottom: "5px" }}
-            className="text-yellow-600/40 text-[9px] sm:text-[10px] uppercase tracking-widest mb-8"
+            className="text-amber-500 text-[12px] sm:text-[10px] uppercase tracking-widest mb-8"
           >
             ഒരു തുക തിരഞ്ഞെടുക്കുക
           </p>
@@ -260,7 +260,7 @@ export default function VishuKaineettam() {
           </motion.button>
 
           {/* ── FOOTER ── */}
-          <div className="mt-6 flex items-center justify-center gap-2 text-yellow-800/40 text-[8px] sm:text-[9px] uppercase">
+          <div className="mt-6 flex items-center justify-center gap-2 text-amber-500 text-[12px] sm:text-[9px] uppercase">
             <span>Digital Kaineettam 2026</span>
             <div className="w-1 h-1 bg-yellow-900 rounded-full" />
             <span>Trusted UPI Transfer</span>
