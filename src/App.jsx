@@ -6,7 +6,7 @@ import WishesSection from './components/WishesSection';
 import GiftSection from './components/GiftSection';
 import Footer from './components/Footer';
 import { useAudio } from './hooks/useAudio';
-import song from '/krishna-mp3.mp4';
+import song from '/Kanikanum-Neram.mp3';
 
 // Optional: Drop your own Kerala instrumental MP3 at /public/music.mp3
 // A royalty-free sample is referenced here — replace with your own file for production.
