@@ -10,7 +10,7 @@ export default function VishuKaineettam() {
   const qrRef = useRef(null);
   const qrInstanceRef = useRef(null);
 
-  const upiId = "9061117489@upi";
+  const upiId = "9961751126.etb@icici";
 
   const getUpiUrl = (amt) =>
     `upi://pay?pa=${upiId}&pn=Vishu%20Kaineettam&am=${amt}&cu=INR&tn=Vishu%20Kaineettam%20Blessings`;
