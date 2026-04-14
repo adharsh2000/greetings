@@ -9,7 +9,7 @@ export default function Footer() {
       <p className="text-yellow-400 text-base" style={{ marginBottom: '4px' }}>🌼 Happy Vishu 2026 🌼</p>
       <p className="text-yellow-500/60 text-xs" style={{ marginBottom: '4px' }}>ഈ വിഷു നിങ്ങൾക്ക് ഐശ്വര്യം നൽകട്ടെ</p>
       <p className="text-yellow-500/40 text-xs flex items-center justify-center gap-1" style={{ marginTop: '24px' }}>
-        Made with <Heart size={11} className="text-red-500" /> by Trideep Kumar
+        Made with <Heart size={11} className="text-red-500" /> by Adharsh MR
       </p>
     </footer>
   );
